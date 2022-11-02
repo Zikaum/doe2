@@ -140,6 +140,15 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.notification {
+    display:flex;
+    flex-direction:column;
+    background-color: #D9D9D9;
+    width: 300px;
+    align-items:center;
+    margin: 20px 20px 0px 0px;
+}
+
 .notification_title {
     display: flex;
     position: absolute;

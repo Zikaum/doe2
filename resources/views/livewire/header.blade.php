@@ -10,7 +10,7 @@
                 <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">SAIR</a>  
                 <form id="logout-form" action="/logout" method="POST" style="display: none;">
                     @csrf
-                </form>  
+                </form>
             @endif
         </div>
         @if (!$logged)

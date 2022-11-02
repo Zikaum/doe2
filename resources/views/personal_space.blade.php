@@ -72,21 +72,14 @@
             @endswitch
         </div>
         <div style="display: flex;width: 100%;margin: 10px">
-            <div style="display: flex;flex: 1;">
-                <div>
-                    <div style="display:flex;flex-direction:column;background-color: #D9D9D9; width: 300px;align-items:center;margin-top: 20px">
-                        <p class="notification_title">NOTIFICAÇÕES</p>
-                        <p style="padding: 30px 5px 5px 5px">
-                            Olá, o hemocentro avisa que recebemos uma notificação que uma doação foi feita para você, no dia _/_/__.<br/>
-                            <br>
-                            Você realmente recebeu esta doação?
-                        </p>
-                        <div style="display: flex;">
-                            <button class="notification_button">SIM</button>
-                            <button class="notification_button">NÃO</button>
-                        </div>
-                    </div>
-                </div>
+            <div style="display: flex;flex: 1; flex-direction: row;">
+
+                @if ($notifications)
+                    @foreach ($notifications as $notification)
+                        @livewire('notification', ['notification' => $notification])
+                    @endforeach
+                @endif
+
             </div>
             <div style="display: flex;flex: 1; justify-content:flex-end"> 
                 <img style="margin-right: 50px" src="{{asset('images/RegisterImage.png')}}" width="150" alt="">

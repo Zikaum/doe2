@@ -15,7 +15,7 @@
   <div class="main">
     @if ($posts)
         @foreach ($posts as $post)
-          @livewire('post', ['data' => ["local" => $post["place"], "quant" => $post["amount"], "motivo" => $post["reason"]]])
+          @livewire('post', ['data' => $post])
         @endforeach
     @endif
     
