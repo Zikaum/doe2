@@ -3,6 +3,8 @@
     <p style="padding: 30px 5px 5px 5px">
         Olá, o hemocentro avisa que recebemos uma notificação que uma doação foi feita para você, no dia _/_/__.<br/>
         <br>
+        Uma doação de {{$notification["amount"]}} bolsas
+        <br>
         Você realmente recebeu esta doação?
     </p>
     <div style="display: flex;">

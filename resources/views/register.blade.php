@@ -20,37 +20,37 @@
                 <div style="display: flex;flex-direction: column;justify-content: center;">
                     <p>
                         <label for="name">Nome: </label>
-                        <input name="name" class="long_input" type="text">
+                        <input name="name" class="long_input" type="text" required>
                     </p>
                     <p>
                         <label for="age">Idade: </label>
-                        <input name="age" type="number" class="short_input" type="text">
+                        <input name="age" type="number" class="short_input" type="text" required>
                     </p>
                     <div>
                         <p>
                             <label for="city">Cidade: </label>
-                            <input name="city" type="text">
+                            <input name="city" type="text" required>
                         </p>
                         <p>
                             <label for="state">Estado: </label>
-                            <input name="state" type="text">
+                            <input name="state" type="text" required>
                         </p>
                         <p style="margin-right: 0px; width: 100%;">
                             <label for="cep">Cep: </label>
-                            <input name="cep" type="number">
+                            <input name="cep" type="number" required>
                         </p>
                     </div>
                     <p>
                         <label for="email">Email: </label>
-                        <input name="email" class="long_input" type="text">
+                        <input name="email" class="long_input" type="text" required>
                     </p>
                     <p>
                         <label for="password">Senha: </label>
-                        <input name="pass" class="long_input" type="text">
+                        <input name="pass" class="long_input" type="text" required>
                     </p>
                     <p>
                         <label for="blood_type">Tipo Sanguíneo: </label>
-                        <input name="bloodType" class="short_input" type="text">
+                        <input name="bloodType" class="short_input" type="text" required>
                     </p>
                 </div>
                 <button>CADASTRAR</button>

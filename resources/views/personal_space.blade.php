@@ -47,15 +47,15 @@
                                 @csrf
                                 <div>
                                     <label for="place">Lugar da doação: </label>
-                                    <input type="text" name="place">
+                                    <input type="text" name="place" required>
                                 </div>
                                 <div>
                                     <label for="place">Motivo da doação: </label>
-                                    <input type="text" name="reason">
+                                    <input type="text" name="reason" required>
                                 </div>
                                 <div>
                                     <label for="place">Quantidade de bolsas de sangue: </label>
-                                    <input class="short_input" type="number" name="amount">
+                                    <input class="short_input" type="number" name="amount" required>
                                 </div>
                                 <button class="request_button">FAZER PEDIDO</button>
                             </form>

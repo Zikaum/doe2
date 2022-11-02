@@ -17,11 +17,11 @@
                 <h1>LOGIN</h1>
                 <p>
                     <label for="email">Email: </label>
-                    <input type="text" name="email">
+                    <input type="text" name="email" required>
                 </p>
                 <p>
                     <label for="pass">Senha: </label>
-                    <input type="password" name="password">
+                    <input type="password" name="password" required>
                 </p>
                 <button>
                     <img src="{{asset('images/ProfileIcon.png')}}" width="25" alt="ProfileIcon">
