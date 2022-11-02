@@ -7,6 +7,10 @@
             <a @if ($headerSelected == 1) class="a_selected" @endif href="/requirements">DESEJA DOAR?</a>
             @if ($logged)
                 <a @if ($headerSelected == 4) class="a_selected" @endif href="/personal_space">ESPAÇO PESSOAL</a>
+                <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">SAIR</a>  
+                <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                    @csrf
+                </form>  
             @endif
         </div>
         @if (!$logged)

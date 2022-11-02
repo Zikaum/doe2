@@ -75,4 +75,13 @@ Route::group(["middleware" => "auth"], function(){
         ]);
         return view("personal_space", ["optionSelected" => 2]);
     });
+    Route::post('/logout', function(Request $request){
+        Auth::logout();
+ 
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+    
+        return redirect('/');
+    });
 });
