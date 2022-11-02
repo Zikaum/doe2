@@ -1,0 +1,17 @@
+.main {
+    display: flex;
+    margin: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+p {
+    font-size: 13pt;
+    text-align: justify;
+    font-weight: bold;
+}
+
+.main img {
+    float: right;
+}

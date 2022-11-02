@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    margin: 15px;
+}
+
+.title {
+    padding: 10px;
+    font-size: 30pt;
+    background-color: #EEBBB7;
+    font-weight: normal;
+    font-style: italic;
+    width: 40%;
+}
+
+.main img {
+    padding-left: 50px;
+    float: right;
+}
+
+p {
+    font-size: 18pt;
+    text-align: justify;
+}
