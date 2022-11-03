@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean("validated")->default(false);
             $table->boolean("confirmed")->default(false);
             $table->integer("amount");
+            $table->date("date");
             $table->timestamps();
         });
     }

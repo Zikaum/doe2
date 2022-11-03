@@ -23,6 +23,9 @@
                     <label for="pass">Senha: </label>
                     <input type="password" name="password" required>
                 </p>
+                
+                <p class="error">{{ $errors->first("email") }}</p>
+                
                 <button>
                     <img src="{{asset('images/ProfileIcon.png')}}" width="25" alt="ProfileIcon">
                     <p>ENTRAR</p>

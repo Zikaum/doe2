@@ -17,3 +17,9 @@
     padding: 20px;
     border-radius: 10px;
 }
+
+.error {
+    color: red;
+    margin: 5px 0px 5px 3px;
+    font-size: 11pt;
+}

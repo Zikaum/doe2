@@ -14,7 +14,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('login');
+        return view('login', ["error" => null]);
     }
 
     /**
@@ -32,7 +32,7 @@ class LoginController extends Controller
         if(Auth::check()){
             return redirect()->intended("/personal_space");
         }else{
-            return view('login');
+            return view('login', ["error" => "Email ou senha inválidos"]);
         }
     }
 }

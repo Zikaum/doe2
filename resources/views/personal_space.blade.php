@@ -42,21 +42,29 @@
                     @break
                 @case(2)
                     
-                        <div class="make_request_area">
+                        <div>
                             <form action="/personal_space/make_request" method="POST">
                                 @csrf
                                 <div>
                                     <label for="place">Lugar da doação: </label>
                                     <input type="text" name="place" required>
                                 </div>
+                                <p class="error">{{ $errors->first('place') }}</p>
                                 <div>
                                     <label for="place">Motivo da doação: </label>
                                     <input type="text" name="reason" required>
                                 </div>
+                                <p class="error">{{ $errors->first('reason') }}</p>
                                 <div>
-                                    <label for="place">Quantidade de bolsas de sangue: </label>
-                                    <input class="short_input" type="number" name="amount" required>
+                                    <label for="limitdate">Data limite: </label>
+                                    <input class="inputdate" type="date" name="limitdate" required>
                                 </div>
+                                <p class="error">{{ $errors->first('limitdate') }}</p>
+                                <div>
+                                    <label for="place">Quantidade de sangue (ml): </label>
+                                    <input class="short_input" type="number" name="amount" min="1" required>
+                                </div>
+                                <p class="error">{{ $errors->first('amount') }}</p>
                                 <button class="request_button">FAZER PEDIDO</button>
                             </form>
                         </div>

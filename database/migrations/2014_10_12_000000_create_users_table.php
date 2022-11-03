@@ -16,13 +16,9 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('age');
-            $table->string('city');
-            $table->string('state');
-            $table->string('cep');
-            $table->string('bloodtype');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('bloodtype');
             $table->rememberToken();
             $table->timestamps();
         });

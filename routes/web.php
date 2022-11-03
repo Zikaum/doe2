@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Requests\CreatePostRequest;
 use App\Models\Notification;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -43,7 +44,8 @@ Route::post("make_noti", function(Request $request){
     $notification = [
         'post_id' => $request->post_id,
         'user_id' => $request->user_id,
-        'amount' => $request->amount
+        'amount' => $request->amount,
+        'date' => $request->date
     ];
     if(Auth::check()){
         $notification["donator_id"] = Auth::user()->id;
@@ -76,11 +78,12 @@ Route::group(["middleware" => "guest"], function(){
     Route::get("/personal_space/make_request", function(){
         return view("personal_space", ["optionSelected" => 2, "notifications" => GetNotifications()]);
     });
-    Route::post("/personal_space/make_request", function(Request $request){
+    Route::post("/personal_space/make_request", function(CreatePostRequest $request){
         Post::create([
             'place' => $request->place,
             'amount' => $request->amount,
             'reason' => $request->reason,
+            'limitdate' => $request->limitdate,
             'user_id' => Auth::user()->id
         ]);
         return view("personal_space", ["optionSelected" => 2, "notifications" => GetNotifications()]);

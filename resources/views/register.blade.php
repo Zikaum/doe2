@@ -17,41 +17,45 @@
             <form action="/register" method="post">
                 @csrf
                 <h1>CADASTRO:</h1>
-                <div style="display: flex;flex-direction: column;justify-content: center;">
-                    <p>
-                        <label for="name">Nome: </label>
-                        <input name="name" class="long_input" type="text" required>
-                    </p>
-                    <p>
-                        <label for="age">Idade: </label>
-                        <input name="age" type="number" class="short_input" type="text" required>
-                    </p>
+                <div class="form-container">
                     <div>
-                        <p>
-                            <label for="city">Cidade: </label>
-                            <input name="city" type="text" required>
-                        </p>
-                        <p>
-                            <label for="state">Estado: </label>
-                            <input name="state" type="text" required>
-                        </p>
-                        <p style="margin-right: 0px; width: 100%;">
-                            <label for="cep">Cep: </label>
-                            <input name="cep" type="number" required>
-                        </p>
+                        <div class="field-container">
+                            <label for="name">Nome: </label>
+                            <input name="name" class="long_input" type="text" required>
+                        </div>
+                        <p class="error">{{ $errors->first('name') }}</p>
                     </div>
-                    <p>
-                        <label for="email">Email: </label>
-                        <input name="email" class="long_input" type="text" required>
-                    </p>
-                    <p>
-                        <label for="password">Senha: </label>
-                        <input name="pass" class="long_input" type="text" required>
-                    </p>
-                    <p>
-                        <label for="blood_type">Tipo Sanguíneo: </label>
-                        <input name="bloodType" class="short_input" type="text" required>
-                    </p>
+                    <div>
+                        <div class="field-container">
+                            <label for="email">Email: </label>
+                            <input name="email" class="long_input" type="text" required>
+                        </div>
+                        <p class="error">{{ $errors->first('email') }}</p>
+                    </div>
+                    <div>
+                        <div class="field-container">
+                            <label for="password">Senha: </label>
+                            <input name="password" class="long_input" type="password" required>
+                        </div>
+                        <p class="error">{{ $errors->first('password') }}</p>
+                    </div>
+                    <div>
+                        <div class="field-container">
+                            <label for="blood_type">Tipo Sanguíneo: </label>
+                            <select name="bloodtype" required>
+                                <option>Tipo</option>
+                                <option value="A-">A-</option>
+                                <option value="A+">A+</option>
+                                <option value="B-">B-</option>
+                                <option value="B+">B+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="O-">O-</option>
+                                <option value="O+">O+</option>
+                            </select>
+                        </div>
+                        <p class="error">{{ $errors->first('bloodtype') }}</p>
+                    </div>
                 </div>
                 <button>CADASTRAR</button>
             </form>

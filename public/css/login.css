@@ -69,3 +69,9 @@ button:hover {
 button:focus {
     background-color: #F02525;
 }
+
+.error {
+    color: red;
+    margin: 5px 0px 5px 3px;
+    text-align: center;
+}

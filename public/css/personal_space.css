@@ -126,6 +126,10 @@ input {
     width: 250px;
 }
 
+.inputdate{
+    width: auto;
+}
+
 .short_input{
     width: 30px;
 }
@@ -171,4 +175,9 @@ input[type=number] {
     font-size: 15pt;
     font-weight: lighter;
     font-style: italic;
+}
+
+.error {
+    color: red;
+    margin: 5px 0px 5px 3px;
 }

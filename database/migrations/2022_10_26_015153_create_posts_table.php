@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer("amount");
             $table->text("reason");
             $table->integer("user_id");
+            $table->date("limitdate");
             $table->timestamps();
         });
     }

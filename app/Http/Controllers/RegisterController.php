@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,22 +27,20 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateUserRequest $request)
     {
         User::create([
             "name" => $request->name,
-            "password" => Hash::make($request->pass),
-            "bloodtype" => $request->bloodType,
+            "password" => Hash::make($request->password),
+            "bloodtype" => $request->bloodtype,
             "cep" => $request->cep,
             "state" => $request->state,
             "city" => $request->city,
             "age" => $request->age,
             "email" => $request->email
         ]);
-        if(Auth::check()){
-            return redirect("/personal_space");
-        }else{
-            return view("register");
-        }
+        
+        return view("register");
+        
     }
 }

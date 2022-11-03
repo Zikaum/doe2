@@ -13,6 +13,7 @@ class Post extends Model
         'place',
         'amount',
         'reason',
+        'limitdate',
         'user_id'
     ];
 }
