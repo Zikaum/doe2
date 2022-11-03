@@ -14,6 +14,8 @@ class Notification extends Model
         'confirmed',
         'donator_id',
         'user_id',
-        'amount'
+        'amount',
+        'date',
+        'amountdonated'
     ];
 }

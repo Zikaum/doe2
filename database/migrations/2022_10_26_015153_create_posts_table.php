@@ -17,9 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string("place");
             $table->integer("amount");
+            $table->integer("amountdonated")->default(0);
             $table->text("reason");
             $table->integer("user_id");
             $table->date("limitdate");
+            $table->boolean("active")->default(true);
             $table->timestamps();
         });
     }

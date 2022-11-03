@@ -21,22 +21,28 @@
         <div class="requests_area">
             @switch($optionSelected)
                 @case(1)
-                    @if ($myPosts)
+                    @if (count($myPosts) > 0)
                         @foreach ($myPosts as $myPost)
                             <div class="request">
                                 <p class="request_text">
-                                    Olá, você fez um pedido <br>
-                                    Para o dia _/_/__ <br>
-                                    Com {{$myPost->amount}} bolsas de sangue <br>
-                                    No local {{$myPost->place}} <br>
-                                    E ele ainda está ATIVO
+                                    <strong>Pedido:</strong> #{{$myPost->id}} <br>
+                                    <strong>Dia limite:</strong> {{\Carbon\Carbon::parse($myPost["limitdate"])->format('d/m/Y')}} <br>
+                                    <strong>Local:</strong> {{$myPost->place}} <br>
+                                    <strong>Status:</strong> {{$myPost->active ? "Ativo" : "Inativo"}}<br>
+                                    <strong>Quantidade:</strong> {{$myPost->amount}}ml de sangue <br>
+                                    <strong>Quantidade doada:</strong> {{$myPost->amountdonated}}ml
                                 </p>
-                                <div style="display:flex; align-items: flex-end;justify-content:end">
-                                    <button class="request_button">EDITAR</button>
-                                    <button class="request_button">APAGAR</button>
+                                <div class="request-form">
+                                    <form action="/personal_space/my_requests/delete" method="POST">
+                                        @csrf
+                                        <input type="text" name="post_id" value="{{$myPost["id"]}}" hidden>
+                                        <button class="request_button">APAGAR</button>
+                                    </form>
                                 </div>
                             </div>
                         @endforeach
+                    @else
+                    <span style="font-size: 16pt;">Você não tem pedidos registrados</span>
                     @endif
 
                     @break
