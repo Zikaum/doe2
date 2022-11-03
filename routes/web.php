@@ -75,7 +75,15 @@ Route::group(["middleware" => "auth"], function(){
         return redirect("/personal_space/my_donations");
     });
     Route::get("/personal_space/my_donations", function(){
-        return view("personal_space", ["optionSelected" => 0, "notifications" => GetNotifications()]);
+        $notifications = Notification::where("donator_id", Auth::user()->id)
+                        ->where("confirmed", true)
+                        ->get();
+        $lastDonation = null;
+        if(count($notifications) > 0){
+            $lastDonation = Carbon::parse($notifications[count($notifications)-1]["date"])->format('d/m/Y');
+        }
+
+        return view("personal_space", ["optionSelected" => 0, "notifications" => GetNotifications(), "lastDonation" =>  $lastDonation]);
     });
     Route::get("/personal_space/my_requests", function(){
         Post::where("limitdate", "<", Carbon::now()->toDateString())->update(["active" => false]);
