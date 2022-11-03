@@ -1,6 +1,11 @@
+html, body {
+    height: 100%;
+}
+
 .main {
     display: flex;
     margin: 15px;
+    margin-bottom: 75px;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
