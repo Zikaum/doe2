@@ -11,13 +11,15 @@ use Illuminate\Support\Facades\Auth;
         <p>QUANTIDADE DE SANGE DOADA (ml): {{$data["amountdonated"]}}</p>
         <p>TEMPO LIMITE: {{ \Carbon\Carbon::parse($data["limitdate"])->format('d/m/Y')}}</p>
         <img src="{{asset('images/Doe.png')}}" width="150" alt="">
-        @if (Auth::check())
-            @if ($data["user_id"] != Auth::user()->id)
+        <div style="margin-top: 100px;">
+            @if (Auth::check())
+                @if ($data["user_id"] != Auth::user()->id)
+                    @livewire('modal-button', ["data" => $data])
+                @endif
+            @else 
                 @livewire('modal-button', ["data" => $data])
             @endif
-        @else 
-            @livewire('modal-button', ["data" => $data])
-        @endif
+        </div>
     </div>
 </div>
 @livewireScripts

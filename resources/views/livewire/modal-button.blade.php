@@ -5,7 +5,7 @@
     opened = false;
 </script>
 
-<button onclick="opened = !opened;console.log(opened);document.getElementById({{$data['id']}}).style.display = opened ? 'flex' : 'none';">Fiz a doação</button>
+<button class="modal_button" onclick="opened = !opened;console.log(opened);document.getElementById({{$data['id']}}).style.display = opened ? 'flex' : 'none';">Fiz a doação</button>
 
 <div class="modal" id={{$data["id"]}}>
     <form action="make_noti" method="POST">
@@ -15,15 +15,15 @@
         <input type="text" name="user_id" value={{$data["user_id"]}} hidden>
         <div>
             <label for="amount">Dia: </label>
-            <input type="date" name="date" required>
+            <input class="inputdate" type="date" name="date" required>
         </div>
-        <p class="error">A data é obrigatória</p>
         <div>
             <label for="amount">Quantidade doada (ml)</label>
-            <input type="number" name="amount" min="0" max="475" required>
+            <input class="short_input" type="number" name="amount" min="0" max="475" required>
         </div>
-        <p class="error">A quantidade deve ser maior que 0 e menor que 475</p>
-        <button>Finalizar</button>
+        <div style="display: flex;justify-content:flex-end;">
+            <button class="confirm_modal_button">Finalizar</button>
+        </div>
     </form>
 
 </div>
