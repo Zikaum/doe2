@@ -29,10 +29,6 @@ class LoginController extends Controller
     
         $request->session()->regenerate();
     
-        if(Auth::check()){
-            return redirect()->intended("/personal_space");
-        }else{
-            return view('login', ["error" => "Email ou senha inválidos"]);
-        }
+        return redirect()->intended("/personal_space");
     }
 }
