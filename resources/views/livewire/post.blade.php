@@ -4,6 +4,7 @@ use \Carbon\Carbon;
 use App\Models\User;
 
 $user = User::where("id", $data["user_id"])->get()[0];
+
 ?>
 <link rel="stylesheet" href="{{ asset('css/post.css') }}" />
 @livewireStyles
@@ -20,7 +21,7 @@ $user = User::where("id", $data["user_id"])->get()[0];
         <img src="{{asset('images/Doe.png')}}" width="150" alt="">
         <div style="margin-top: 100px;">
             @if (Auth::check())
-                @if ($data["user_id"] != Auth::user()->id && $user["bloodtype"] == Auth::user()->bloodtype)
+            @if ($data["user_id"] != Auth::user()->id && CanDonate($user["bloodtype"], Auth::user()->bloodtype))
                     @livewire('modal-button', ["data" => $data])
                 @endif
             @else 

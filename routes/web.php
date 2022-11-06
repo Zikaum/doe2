@@ -5,10 +5,12 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Requests\CreatePostRequest;
 use App\Models\Notification;
 use App\Models\Post;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::get('/dashboard', function () {
@@ -53,6 +55,9 @@ Route::post("make_noti", function(Request $request){
         'date' => $request->date
     ];
     if(Auth::check()){
+        if(!CanDonate(User::where("id", $notification["user_id"])->get()[0]["bloodtype"], Auth::user()->bloodtype)){
+            return redirect("/");
+        }
         $notification["donator_id"] = Auth::user()->id;
     }
     
@@ -138,3 +143,18 @@ function GetNotifications(){
                                 ->get();
     return $notifications;
 }
+
+function CanDonate($receiver, $donater){
+    $possibleDonations = [
+        "A+" => ["A+", "A-", "O+", "O-"],
+        "A-" => ["A-", "O-"],
+        "B+" => ["B+", "B-", "O+", "O-"],
+        "B-" => ["B-", "O-"],
+        "AB+" => ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"],
+        "AB-" => ["A-", "B-", "AB-", "O-"],
+        "O+" => ["O+", "O-"],
+        "O-" => ["O-"]
+    ];
+    return in_array($donater, $possibleDonations[$receiver]);
+  }
+  
