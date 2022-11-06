@@ -94,8 +94,6 @@ h1 {
 .donation {
     margin: 0px;
     margin: 5px;
-    display: flex;
-    flex: 1;
     font-style: italic;
     font-size: 15pt;
 }

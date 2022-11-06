@@ -39,6 +39,7 @@ a, a:visited, a:hover, a:active {
     flex-direction: column;
     align-items: flex-end;
     height: 100%;
+    margin: 10px 10px 0px 0px;
 }
 .login img {
     padding-right: 5px;
@@ -100,6 +101,7 @@ a, a:visited, a:hover, a:active {
         flex: 1;
         align-items: center;
         justify-content: center;
+        margin: 0px;
     }
 
     #desktop-header-image {

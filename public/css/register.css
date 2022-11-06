@@ -101,4 +101,8 @@ option {
     form {
         width: 90%;
     }
+    .main {
+        margin: 0px;
+        margin-top: 60px;
+    }
 }

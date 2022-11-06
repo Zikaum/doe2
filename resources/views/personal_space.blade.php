@@ -76,21 +76,16 @@
                         </div>
                     @break
                 @default
-                        @if ($lastDonation)
-                            <p class="donation">
-                                Bem vindo ao doe sangue!<br/>
-                                Se deseja ajudar alguem com uma doação de sangue, acesse o início
-                                <br><br><br><br><br>
+                        <p class="donation">
+                            Bem vindo ao doe sangue!<br/>
+                            Se deseja ajudar alguem com uma doação de sangue, acesse o <a href="/">início</a>
+                            <br><br><br><br><br>
+                            @if ($lastDonation)
                                 Você doou pela última vez em {{$lastDonation}}, obrigado por ajudar o próximo!
-                            </p>
-                        @else
-                            <p class="donation">
-                                Bem vindo ao doe sangue!<br/>
-                                Se deseja ajudar alguem com uma doação de sangue, acesse o início
-                                <br><br><br><br><br>
-                                Você nunca doou neste site antes!
-                            </p>
-                        @endif
+                            @else
+                                Você nunca doou conosco antes!
+                            @endif
+                        </p>
                     @break
             @endswitch
         </div>
