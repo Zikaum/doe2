@@ -59,7 +59,7 @@
                 </div>
                 <button>CADASTRAR</button>
             </form>
-            <img src="{{asset('images/RegisterImage.png')}}" alt="RegisterImage">
+            <img id="image-view" src="{{asset('images/RegisterImage.png')}}" alt="RegisterImage">
         </div>
     </div>
 

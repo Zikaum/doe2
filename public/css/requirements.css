@@ -1,7 +1,7 @@
 .main {
     display: flex;
     margin: 15px;
-    margin-bottom: 75px;
+    padding-bottom: 75px;
 }
 
 .title {
@@ -12,13 +12,21 @@
     font-style: italic;
     width: 40%;
 }
-
 .main img {
     padding-left: 50px;
     float: right;
 }
 
+@media only screen and (max-width: 630px) {
+    .title {
+        width: 70%;
+    }
+    .main img {
+        display: none;
+    }
+}
+
 p {
-    font-size: 18pt;
+    font-size: 16pt;
     text-align: justify;
 }

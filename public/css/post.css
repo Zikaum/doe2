@@ -1,0 +1,23 @@
+.post-container {
+    display: flex;
+    flex-direction: column;
+    margin: 6px 3px 0px 3px;
+    padding: 7px;
+    width: 400px;
+}
+
+.post-header {
+    height: 40px;
+    background-color: #EEBBB7;
+    margin-bottom: 6px;
+}
+
+.post-body {
+    background-color: #D9D9D9;
+    width: 100%;
+}
+
+.post-body p {
+    margin-left: 10px;
+    font-size: 1.06em;
+}

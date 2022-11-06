@@ -39,8 +39,10 @@ class RegisterController extends Controller
             "age" => $request->age,
             "email" => $request->email
         ]);
+
+        Auth::attempt($request->only("email", "password"));
         
-        return view("register");
+        return redirect("personal_space");
         
     }
 }

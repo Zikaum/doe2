@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
+Route::get('/dashboard', function () {
+    return redirect("/");
+});
+
 Route::get('/', function () {
 
     Post::where("limitdate", "<", Carbon::now()->toDateString())->update(
@@ -41,12 +45,7 @@ Route::get("/requirements", function(){
     return view("requirements");
 });
 
-// Route::get("maked_noti", function(){
-//     return view("maked_noti");
-// });
-
 Route::post("make_noti", function(Request $request){
-    // dd($request->all());
     $notification = [
         'post_id' => $request->post_id,
         'user_id' => $request->user_id,

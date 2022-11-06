@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/notification.css') }}" />
 <div class="notification">
     <p class="notification_title">NOTIFICAÇÃO</p>
     <p style="padding: 30px 5px 5px 5px">

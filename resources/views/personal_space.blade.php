@@ -94,8 +94,8 @@
                     @break
             @endswitch
         </div>
-        <div style="display: flex;width: 100%;margin: 10px">
-            <div style="display: flex;flex: 1; flex-direction: row;">
+        <div id="notifications-area">
+            <div id="notifications-area-content">
 
                 @if ($notifications)
                     @foreach ($notifications as $notification)
@@ -104,13 +104,22 @@
                 @endif
 
             </div>
-            <div style="display: flex;flex: 1; justify-content:flex-end"> 
-                <img style="margin-right: 50px" src="{{asset('images/RegisterImage.png')}}" width="150" alt="">
+            <div style="display: flex;flex: 1; justify-content:flex-end;"> 
+                <img id="image-view" style="margin-right: 50px;" src="{{asset('images/RegisterImage.png')}}" width="150" alt="">
             </div>
         </div>
 
         
     </div>
+
+    <script>
+        const areaContent = document.getElementById("notifications-area-content");
+        const area = document.getElementById("notifications-area");
+        document.getElementById("image-view").style.display = (areaContent.offsetWidth < area.offsetWidth) ? "block" : "none";
+        console.log(areaContent.offsetWidth);
+        console.log(area.offsetWidth);
+        console.log(areaContent.offsetWidth < area.offsetWidth);
+      </script>
 
     @livewire('footer')
     @livewireScripts

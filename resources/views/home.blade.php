@@ -8,7 +8,7 @@
   <title>Doe</title>
   @livewireStyles
 </head>
-<body style="margin: 0px">
+<body style="margin: 0px; width: 100%">
 
   @livewire('header', ['headerSelected' => 0])
 

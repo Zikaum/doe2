@@ -31,7 +31,7 @@
                     <p>ENTRAR</p>
                 </button>
             </form>
-            <img src="{{asset('images/Doe.png')}}" width="150" alt="Doe">
+            <img id="image-view" src="{{asset('images/Doe.png')}}" width="150" alt="Doe">
         </div>
       </div>
 
