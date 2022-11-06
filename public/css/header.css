@@ -130,11 +130,16 @@ a, a:visited, a:hover, a:active {
     padding: 10px;
 }
 
-.a-container a {
+.mobile-a-container a {
     font-size: 4vw;
 }
 
-.a-container{
+.desktop-a-container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.mobile-a-container{
     display: flex;
     justify-content: center;
     align-items:center;

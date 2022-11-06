@@ -6,10 +6,16 @@
         <img id="desktop-header-image" src="{{asset('images/DoeAgora.png')}}" alt="Doe Agora"/>
         <nav class="desktop-nav">
             <div style="display: flex; flex: 1; justify-content: center;">
-                <a @if ($headerSelected == 0) class="a_selected" @endif href="/">INICIO</a>
-                <a @if ($headerSelected == 1) class="a_selected" @endif href="/requirements">DESEJA DOAR?</a>
+                <div class="desktop-a-container">
+                    <a @if ($headerSelected == 0) class="a_selected" @endif href="/">INÍCIO</a>
+                </div>
+                <div class="desktop-a-container">
+                    <a @if ($headerSelected == 1) class="a_selected" @endif href="/requirements">DESEJA DOAR?</a>
+                </div>
                 @if ($logged)
-                <a @if ($headerSelected == 4) class="a_selected" @endif href="/personal_space">ESPAÇO PESSOAL</a>
+                <div class="desktop-a-container">
+                    <a @if ($headerSelected == 4) class="a_selected" @endif href="/personal_space">ESPAÇO PESSOAL</a>
+                </div>
                 @endif
             </div>
             @if (!$logged)
@@ -42,24 +48,24 @@
                 </div>
             </div>
             <nav class="mobile-nav" style="justify-content: center;overflow:auto;">
-                <div class="a-container">
+                <div class="mobile-a-container">
                     <a @if ($headerSelected == 0) class="a_selected" @endif href="/">INICIO</a>
                 </div>
-                <div  class="a-container">
+                <div class="mobile-a-container">
                     <a @if ($headerSelected == 1) class="a_selected" @endif href="/requirements">DESEJA<br>DOAR?</a>
                 </div>
                 @if ($logged)
-                    <div  class="a-container">
+                    <div class="mobile-a-container">
                         <a @if ($headerSelected == 4) class="a_selected" @endif href="/personal_space">ESPAÇO<br>PESSOAL</a>
                     </div>
-                    <div  class="a-container">
+                    <div class="mobile-a-container">
                         <a class="quit" href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">SAIR</a>
                     </div>
                 @else
-                    <div class="a-container">
+                    <div class="mobile-a-container">
                         <a @if ($headerSelected == 2) class="a_selected" @endif href="/register">CADASTRO</a>
                     </div>
-                    <div class="a-container">
+                    <div class="mobile-a-container">
                         <a @if ($headerSelected == 3) class="a_selected" @endif href="/login">ENTRAR</a>
                     </div>
                 @endif
